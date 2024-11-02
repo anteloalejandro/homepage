@@ -112,9 +112,6 @@ form.query {
 /** CONTAINER STYLES **/
 
 div.container {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
   padding: 2rem;
   border-radius: var(--radius);
   background-color: #222;
@@ -129,11 +126,25 @@ div.container {
     h1 {
       margin: 0;
     }
+    img {
+      transition: transform 200ms ease;
+    }
   }
   .container-body {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  &:is(.show-actions, .always-show) {
+    .container-head img {
+      transform: rotateX(180deg);
+    }
+    .container-body {
+      margin-top: 1rem;
+      max-height: unset;
+    }
   }
 }
 

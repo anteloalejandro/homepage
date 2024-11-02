@@ -14,8 +14,8 @@
 /** SHOW EMBLEMS **/
 
 [data-action-key],
-[data-action-group]:not(.show-actions),
-.show-actions [data-action-group-key]
+[data-action-group],
+[data-action-group-key]
 {
   overflow: hidden;
   position: relative;
@@ -29,11 +29,11 @@
     font-family: Ubuntu Mono, Consolas, monospace;
     font-weight: bold;
     padding: 0.2em 0.4em;
-    background-color: lightblue;
+    background-color: #ccc;
     color: #333;
   }
 }
-[data-action-key]::after { 
+.wrapper:not(.hide-non-group-actions) [data-action-key]::after { 
     content: attr(data-action-key);
 }
 [data-action-group]:not(.show-actions)::after {
@@ -130,6 +130,11 @@ div.container {
       margin: 0;
     }
   }
+  .container-body {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+  }
 }
 
 ul.links {
@@ -157,10 +162,5 @@ ul.links {
     background-color: #333;
     padding: 1em 1em;
     border-radius: var(--radius);
-    &::after {
-      padding: 0.2em;
-      background-color: yellow;
-      color: #333;
-    }
   }
 }

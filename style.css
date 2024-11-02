@@ -3,6 +3,8 @@
   font-size: 16px;
   background-color: #282828;
   color: #ddd;
+
+  --radius: 10px;
 }
 
 * {
@@ -21,11 +23,12 @@
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 0 0 0 var(--radius);
 
     font-size: 0.8em;
     font-family: Ubuntu Mono, Consolas, monospace;
     font-weight: bold;
-    padding: 0.2em;
+    padding: 0.2em 0.4em;
     background-color: lightblue;
     color: #333;
   }
@@ -66,7 +69,7 @@ form.query {
     text-align: center;
     padding: 1rem;
     font-size: 1.2rem;
-    border-radius: 1rem;
+    border-radius: var(--radius);
     
     background-color: #222;
     border: none;
@@ -81,10 +84,30 @@ form.query {
   img {
     aspect-ratio: 1/1;
     object-fit: cover;
-    max-width: 100%;
+    max-height: 300px;
   }
 }
 
+/** QUICK LINK STYLES **/
+.quick-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    background-color: #222;
+
+    img {
+      aspect-ratio: 1/1;
+      height: 35px;
+      object-fit: contain;
+    }
+  }
+}
 
 /** CONTAINER STYLES **/
 
@@ -93,7 +116,7 @@ div.container {
   flex-flow: column nowrap;
   gap: 1rem;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   background-color: #222;
   &[data-action-group]::after {
     font-size: 1.2rem;
@@ -133,7 +156,7 @@ ul.links {
     color: #ddd;
     background-color: #333;
     padding: 1em 1em;
-    border-radius: 0.5em;
+    border-radius: var(--radius);
     &::after {
       padding: 0.2em;
       background-color: yellow;

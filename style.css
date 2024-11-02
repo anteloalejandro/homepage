@@ -1,7 +1,7 @@
 :root {
   font-family: system-ui, sans-serif;
   font-size: 16px;
-  background-color: #222;
+  background-color: #282828;
   color: #ddd;
 }
 
@@ -9,16 +9,25 @@
   box-sizing: border-box; 
 }
 
+/** SHOW EMBLEMS **/
+
 [data-action-key],
 [data-action-group]:not(.show-actions),
 .show-actions [data-action-group-key]
 {
+  overflow: hidden;
   position: relative;
   &::after {
-    font-size: 0.5em;
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
+
+    font-size: 0.8em;
+    font-family: Ubuntu Mono, Consolas, monospace;
+    font-weight: bold;
+    padding: 0.2em;
+    background-color: lightblue;
+    color: #333;
   }
 }
 [data-action-key]::after { 
@@ -29,4 +38,106 @@
 }
 .show-actions [data-action-group-key]::after {
     content: attr(data-action-group-key);
+}
+
+/** BODY STYLES **/
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  margin: 0;
+  padding: 1rem;
+
+  .wrapper {
+    max-width: 800px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+}
+
+/** INPUT STYLES **/
+
+form.query {
+  input {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    
+    background-color: #222;
+    border: none;
+    color: #ddd;
+    outline: 0px;
+  }
+}
+
+/** LOGO STYLES**/
+.logo {
+  text-align: center;
+  img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-width: 100%;
+  }
+}
+
+
+/** CONTAINER STYLES **/
+
+div.container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #222;
+  &[data-action-group]::after {
+    font-size: 1.2rem;
+  }
+
+  .container-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+ul.links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+
+  li {
+    flex: 1;
+    /* 3 in a row */
+    /* min-width: 26%; */
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #ddd;
+    background-color: #333;
+    padding: 1em 1em;
+    border-radius: 0.5em;
+    &::after {
+      padding: 0.2em;
+      background-color: yellow;
+      color: #333;
+    }
+  }
 }

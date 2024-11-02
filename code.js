@@ -29,12 +29,11 @@ document.addEventListener('keydown', ev => {
     group.parent.classList.remove('show-actions');
     const element = group.actionables.find(el => el.dataset.actionGroupKey == ev.key);
     if (element) {
-      ev.preventDefault()
+      ev.preventDefault();
       element.focus();
       element.click();
-      console.log(`action ${ev.key}`);
+      // console.log(`group action ${ev.key}`);
     }
-    // element && console.log(`group action ${ev.key}`);
     groupKeyPressed = null;
   } else if (aux = actionGroups.find(el => el.parent.dataset.actionGroup == ev.key)) {
     aux.parent.classList.add('show-actions')
@@ -44,11 +43,10 @@ document.addEventListener('keydown', ev => {
     groupKeyPressed = null;
     const element = actionables.find(el => el.dataset.actionKey == ev.key);
     if (element) {
-      ev.preventDefault()
+      ev.preventDefault();
       element.focus();
       element.click();
-      console.log(`action ${ev.key}`);
+      // console.log(`action ${ev.key}`);
     }
-    // console.log(`action ${ev.key}`);
   }
 });

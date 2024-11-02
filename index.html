@@ -7,15 +7,37 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <input type="text" data-action-key="/">
-    <ul data-action-group="a">
-      Group a
-      <li data-action-group-key="s">sorem</li> 
-      <li data-action-group-key="d">dorem</li> 
-      <li data-action-group-key="f">forem</li> 
-    </ul>
-    <p data-action-key="s">s</p>
-    <p data-action-key="d">d</p>
+
+    <div class="wrapper">
+
+      <form class="query" action="https://duckduckgo.com/?q=&t=h_" method="get" autocomplete="off">
+        <input type="text" placeholder="Search" autofocus data-action-key="/">
+      </form>
+      <div class="logo"><img src="" alt="LOGO"></div>
+      <div class="quick-links">
+        <a href="https://archlinux.org" data-action-key="a"><img src="" alt=""></a>
+        <a href="https://youtube.com" data-action-key="s"><img src="" alt=""></a>
+        <a href="https://protonmail.com" data-action-key="d"><img src="" alt=""></a>
+        <a href="https://github.com" data-action-key="f"><img src="" alt=""></a>
+      </div>
+      <div class="container" data-action-group="t">
+        <div class="container-head">
+          <h1>TITLE</h1>
+          <div class="icon">icon</div>
+        </div>
+        <div class="container-body">
+          <ul class="links">
+            <li> <a href="localhost" data-action-group-key="a">localhost</a> </li>
+            <li> <a href="localhost" data-action-group-key="s">localhost</a> </li>
+            <li> <a href="localhost" data-action-group-key="d">localhost</a> </li>
+            <li> <a href="localhost" data-action-group-key="d">localhost</a> </li>
+            <li> <a href="localhost" data-action-group-key="d">localhost</a> </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
     <script src="code.js"></script>
   </body>
 </html>

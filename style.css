@@ -1,0 +1,32 @@
+:root {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  background-color: #222;
+  color: #ddd;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+[data-action-key],
+[data-action-group]:not(.show-actions),
+.show-actions [data-action-group-key]
+{
+  position: relative;
+  &::after {
+    font-size: 0.5em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+[data-action-key]::after { 
+    content: attr(data-action-key);
+}
+[data-action-group]:not(.show-actions)::after {
+    content: attr(data-action-group);
+}
+.show-actions [data-action-group-key]::after {
+    content: attr(data-action-group-key);
+}

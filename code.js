@@ -53,3 +53,25 @@ document.addEventListener('keydown', ev => {
     }
   }
 });
+
+// Fetch bookmarks
+fetch('bookmarks.html')
+  .then(response => {
+    if (response.ok)
+      return response.text()
+    else
+      throw new Error(response.error)
+  })
+  .then(text => {
+    const target = document.getElementById('bookmarks-target')
+    target.innerHTML = text
+    const bookmarks = target.querySelector('h1+dl').children
+    target.replaceChildren(...bookmarks)
+  })
+  .catch(error => { console.error(error) })
+  .finally(() => {
+    const target = document.getElementById('bookmarks-target');
+    const btn = target.parentElement.parentElement;
+    contentTabFocus(!btn.classList.contains('hidden'), target);
+    console.log(btn.classList.contains('hidden'));
+  })

@@ -65,6 +65,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+a {
+  color: cyan;
+}
+
 /** INPUT STYLES **/
 
 form.query {
@@ -183,6 +187,20 @@ ul.links {
     background-color: #333;
     padding: 0.625rem 1rem;
     border-radius: var(--radius);
+  }
+}
+
+#bookmarks-target {
+  a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    margin-block: 2rem 0;
+  }
+  hr {
+    border-color: #FFFFFF0A;
   }
 }
 

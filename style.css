@@ -5,13 +5,15 @@
   color: #ddd;
 
   --radius: 10px;
+  --hint-bg-color: #ccc;
+  --hint-fg-color: #333;
 }
 
 * {
   box-sizing: border-box; 
 }
 
-/** SHOW EMBLEMS **/
+/** SHOW HINT **/
 
 [data-action-key],
 [data-action-group],
@@ -29,8 +31,8 @@
     font-family: Ubuntu Mono, Consolas, monospace;
     font-weight: bold;
     padding: 0.2em 0.4em;
-    background-color: #ccc;
-    color: #333;
+    background-color: var(--hint-bg-color);
+    color: var(--hint-fg-color);
   }
 }
 .wrapper:not(.hide-non-group-actions) [data-action-key]::after { 
@@ -111,7 +113,7 @@ form.query {
 
 /** CONTAINER STYLES **/
 
-div.container {
+.container {
   padding: 2rem;
   border-radius: var(--radius);
   background-color: #222;
@@ -138,12 +140,19 @@ div.container {
     overflow: hidden;
   }
   &:is(.show-actions, .always-show) {
-    .container-head img {
-      transform: rotateX(180deg);
-    }
     .container-body {
       margin-top: 1rem;
       max-height: unset;
+    }
+  }
+  &:is(.show-actions) {
+    .container-head img {
+      transform: rotateX(180deg);
+    }
+  }
+  &:is(.always-show) {
+    .container-head img {
+      display: none;
     }
   }
 }

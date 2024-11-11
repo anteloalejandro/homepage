@@ -17,7 +17,6 @@ const actionGroups =
 
 /** @type string*/
 groupKeyPressed = null;
-
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('keydown', ev => {
     ev.stopPropagation();
@@ -38,7 +37,7 @@ document.addEventListener('keydown', ev => {
     }
     groupKeyPressed = null;
   } else if (aux = actionGroups.find(el => el.parent.dataset.actionGroup == ev.key)) {
-    aux.parent.classList.add('show-actions')
+    aux.parent.classList.add('show-actions');
     wrapper.classList.add('hide-non-group-actions');
     groupKeyPressed = ev.key;
     // console.log(`group ${ev.key}. waiting for group action`);
@@ -52,6 +51,15 @@ document.addEventListener('keydown', ev => {
       // console.log(`action ${ev.key}`);
     }
   }
+});
+
+document.querySelectorAll('.dropdown').forEach(element => {
+  element.addEventListener('click', ev => {
+    const group = actionGroups.find(group => group.parent.contains(element));
+    if (!group) return;
+    
+    group.parent.classList.toggle('show-actions');
+  })
 });
 
 // Fetch bookmarks

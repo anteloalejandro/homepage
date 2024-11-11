@@ -136,7 +136,7 @@ form.query {
     h1 {
       margin: 0;
     }
-    img {
+    .dropdown {
       transition: transform 200ms ease;
     }
   }
@@ -151,7 +151,7 @@ form.query {
     }
   }
   &:is(.show-actions) {
-    .container-head img {
+    .container-head .dropdown {
       transform: rotateX(180deg);
     }
   }

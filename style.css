@@ -19,13 +19,12 @@
 [data-action-group],
 [data-action-group-key]
 {
-  overflow: hidden;
   position: relative;
   &::after {
     position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 0 0 0 var(--radius);
+    top: -0.2rem;
+    right: -0.2rem;
+    border-radius: 2px;
 
     font-size: 0.8em;
     font-family: Ubuntu Mono, Consolas, monospace;
@@ -138,16 +137,13 @@ form.query {
     }
   }
   .container-body {
-    display: flex;
-    flex-flow: column nowrap;
+    display: none;
     gap: 1rem;
-    max-height: 0px;
-    overflow: hidden;
   }
   &:is(.show-actions, .always-show) {
     .container-body {
       margin-top: 1rem;
-      max-height: unset;
+      display: block;
     }
   }
   &:is(.show-actions) {

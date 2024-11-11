@@ -36,7 +36,7 @@
 .wrapper:not(.hide-non-group-actions) [data-action-key]::after { 
     content: attr(data-action-key);
 }
-[data-action-group]:not(.show-actions)::after {
+.wrapper:not(.hide-non-group-actions) [data-action-group]::after {
     content: attr(data-action-group);
 }
 .show-actions [data-action-group-key]::after {

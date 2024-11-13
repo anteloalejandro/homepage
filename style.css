@@ -40,7 +40,7 @@
 .wrapper:not(.hide-non-group-actions) [data-action-group]::after {
     content: attr(data-action-group);
 }
-.show-actions [data-action-group-key]::after {
+.wrapper.hide-non-group-actions .show-actions [data-action-group-key]::after {
     content: attr(data-action-group-key);
 }
 
@@ -122,6 +122,7 @@ form.query {
 /** CONTAINER STYLES **/
 
 .container {
+  width: 100%;
   padding: 1.5rem;
   border-radius: var(--radius);
   background-color: #222;

@@ -19,6 +19,9 @@ const actionGroups =
 groupKeyPressed = null;
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('keydown', ev => {
+    if (ev.key == "Escape") {
+      input.blur(); // unfocus (yes, really) input when pressing ESC
+    }
     ev.stopPropagation();
   })
 })
@@ -80,6 +83,4 @@ fetch('bookmarks.html')
   .finally(() => {
     const target = document.getElementById('bookmarks-target');
     const btn = target.parentElement.parentElement;
-    contentTabFocus(!btn.classList.contains('hidden'), target);
-    console.log(btn.classList.contains('hidden'));
   })

@@ -80,7 +80,7 @@ fetch('bookmarks.html')
     target.replaceChildren(...bookmarks)
   })
   .catch(error => { console.error(error) })
-  .finally(() => {
-    const target = document.getElementById('bookmarks-target');
-    const btn = target.parentElement.parentElement;
-  })
+  // .finally(() => {
+  //   const target = document.getElementById('bookmarks-target');
+  //   const btn = target.parentElement.parentElement;
+  // })

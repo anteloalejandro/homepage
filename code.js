@@ -26,6 +26,8 @@ document.querySelectorAll('input').forEach(input => {
   })
 })
 document.addEventListener('keydown', ev => {
+  if (ev.altKey || ev.ctrlKey) return
+
   let aux;
   if (groupKeyPressed) {
     const group = actionGroups.find(el => el.parent.dataset.actionGroup == groupKeyPressed);
